@@ -1,4 +1,4 @@
-import { LifeBuoy, Send } from "lucide-react";
+import { LifeBuoy, Send, GitBranch, GitFork, FileText } from "lucide-react";
 
 export const data = {
   navMain: [
@@ -110,6 +110,10 @@ export const data = {
           title: "Password Generator",
           url: "/passgen",
         },
+        {
+          title: "Password Checker",
+          url: "/passcheck",
+        },
       ],
     },
     {
@@ -117,8 +121,8 @@ export const data = {
       url: "#",
       items: [
         {
-          title: "WHOIS",
-          url: "#",
+          title: "WHOIS + DNS Lookup",
+          url: "/whois",
         },
         {
           title: "QR Code Generator",
@@ -129,14 +133,19 @@ export const data = {
   ],
   navSecondary: [
     {
-      title: "Support",
-      url: "#",
-      icon: LifeBuoy,
+      title: "Source Code",
+      url: "https://github.com/KawanuaDev/app-kawanua",
+      icon: GitBranch,
     },
     {
-      title: "Feedback",
-      url: "#",
-      icon: Send,
+      title: "Berkontribusi",
+      url: "https://github.com/KawanuaDev/app-kawanua/blob/main/CONTRIBUTING.md",
+      icon: GitFork,
+    },
+    {
+      title: "License",
+      url: "https://github.com/KawanuaDev/app-kawanua/blob/main/LICENSE",
+      icon: FileText,
     },
   ],
 };

@@ -7,8 +7,18 @@ import VerdictCard from "@/components/urlscanner/VerdictCard";
 import VendorList from "@/components/urlscanner/VendorList";
 import MetadataSidebar from "@/components/urlscanner/MetadataSidebar";
 import type { VirusTotalResponse } from "@/types/virustotal";
+import Footer from "@/components/Footer";
 
 const API_KEY = import.meta.env.VITE_VIRUSTOTAL_API_KEY as string;
+
+// In development, Vite proxies /api/vt/* → https://www.virustotal.com/api/v3/*
+// which avoids the browser CORS restriction (request is made server-side).
+// In production, point VT_BASE to your own backend proxy URL via VITE_VT_PROXY_BASE,
+// or fall back to the direct VirusTotal URL (which may still hit CORS unless your
+// production host sets the correct CORS headers or you deploy a serverless proxy).
+const VT_BASE =
+  import.meta.env.VITE_VT_PROXY_BASE ??
+  (import.meta.env.DEV ? "/api/vt" : "https://www.virustotal.com/api/v3");
 
 function extractTarget(input: string): {
   target: string;
@@ -40,9 +50,9 @@ async function scanWithVirusTotal(input: string): Promise<VirusTotalResponse> {
       .replace(/\+/g, "-")
       .replace(/\//g, "_")
       .replace(/=/g, "");
-    endpoint = `https://www.virustotal.com/api/v3/urls/${encoded}`;
+    endpoint = `${VT_BASE}/urls/${encoded}`;
   } else {
-    endpoint = `https://www.virustotal.com/api/v3/domains/${target}`;
+    endpoint = `${VT_BASE}/domains/${target}`;
   }
 
   const res = await fetch(endpoint, {
@@ -236,6 +246,7 @@ export default function UrlScannerPage() {
           </motion.div>
         )}
       </main>
+      <Footer />
     </div>
   );
 }

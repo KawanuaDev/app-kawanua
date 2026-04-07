@@ -10,6 +10,15 @@ export default defineConfig(() => ({
     hmr: {
       overlay: false,
     },
+    proxy: {
+      // Proxy /api/vt/* → https://www.virustotal.com/api/v3/*
+      // This bypasses CORS because the request is made server-side by Vite.
+      "/api/vt": {
+        target: "https://www.virustotal.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/vt/, "/api/v3"),
+      },
+    },
   },
   plugins: [react()],
   resolve: {

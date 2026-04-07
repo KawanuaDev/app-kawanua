@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer";
-import QRCodeGenerator from "@/components/qrcode/QRCodeGenerator";
 
-const QrCodePage = () => {
+export default function DashboardPage() {
   return (
     <>
       <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
@@ -11,19 +10,16 @@ const QrCodePage = () => {
         <div className="w-full max-w-4xl space-y-6">
           <div className="text-center space-y-2">
             <h1 className="text-4xl font-bold text-foreground tracking-tight">
-              QR Code <span className="text-primary">Generator</span>
+              Dashboard <span className="text-primary">Kawanua</span>
             </h1>
             <p className="text-muted-foreground">
-              Buat QR code kustom dengan warna, ukuran, dan format yang kamu
-              inginkan
+              Dashboard Kawanua adalah dashboard untuk mengelola aplikasi
+              Kawanua
             </p>
           </div>
-          <QRCodeGenerator />
         </div>
       </div>
       <Footer />
     </>
   );
-};
-
-export default QrCodePage;
+}

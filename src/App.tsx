@@ -9,6 +9,9 @@ import ImageOptimizerPage from "./pages/Index-shrimg.tsx";
 import QrCodePage from "./pages/Index-qrcode.tsx";
 import PassGenPage from "./pages/Index-passgen.tsx";
 import UrlScannerPage from "./pages/Index-urlscanner.tsx";
+import WhoisPage from "./pages/Index-whois.tsx";
+import DashboardPage from "./pages/Index-dash.tsx";
+import PassCheckPage from "./pages/Index-passcheck.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,10 +23,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Page />}>
+            <Route path="dashboard" element={<DashboardPage />} />
             <Route path="image-optimizer" element={<ImageOptimizerPage />} />
             <Route path="qrcode" element={<QrCodePage />} />
             <Route path="passgen" element={<PassGenPage />} />
             <Route path="urlscanner" element={<UrlScannerPage />} />
+            <Route path="whois" element={<WhoisPage />} />
+            <Route path="passcheck" element={<PassCheckPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
