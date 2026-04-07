@@ -23,7 +23,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Page />}>
-            <Route path="dashboard" element={<DashboardPage />} />
+            <Route index element={<DashboardPage />} />
             <Route path="image-optimizer" element={<ImageOptimizerPage />} />
             <Route path="qrcode" element={<QrCodePage />} />
             <Route path="passgen" element={<PassGenPage />} />
