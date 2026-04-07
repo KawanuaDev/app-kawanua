@@ -89,11 +89,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
-      <SidebarFooter>
+      {/* <SidebarFooter>
         <div className="p-1">
           <SidebarOptInForm />
         </div>
-      </SidebarFooter>
+      </SidebarFooter> */}
       {/* <SidebarRail /> */}
     </Sidebar>
   );

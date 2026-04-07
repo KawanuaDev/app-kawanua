@@ -102,10 +102,10 @@ export const data = {
       title: "Security",
       url: "#",
       items: [
-        {
-          title: "URL + IP Checker",
-          url: "/urlscanner",
-        },
+        // {
+        //   title: "URL + IP Checker",
+        //   url: "/urlscanner",
+        // },
         {
           title: "Password Generator",
           url: "/passgen",
@@ -120,10 +120,10 @@ export const data = {
       title: "Utilities",
       url: "#",
       items: [
-        {
-          title: "WHOIS + DNS Lookup",
-          url: "/whois",
-        },
+        // {
+        //   title: "WHOIS + DNS Lookup",
+        //   url: "/whois",
+        // },
         {
           title: "QR Code Generator",
           url: "/qrcode",
