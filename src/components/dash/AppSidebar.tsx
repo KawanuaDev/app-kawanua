@@ -1,23 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { Command } from "lucide-react";
 
-import { NavMain } from "@/components/dash/nav-main";
-import { NavProjects } from "@/components/dash/nav-projects";
-import { NavSecondary } from "@/components/dash/nav-secondary";
-import { NavUser } from "@/components/dash/nav-user";
+import { NavSecondary } from "@/components/dash/NavSecondary";
 import {
   Sidebar,
   SidebarContent,
@@ -32,7 +18,6 @@ import {
   SidebarMenuSubItem,
   SidebarMenuSubButton,
 } from "@/components/ui/sidebar";
-import { SidebarOptInForm } from "./sidebar-opt-in-form";
 import { Link } from "react-router-dom";
 import { data } from "@/lib/data";
 import { APP_VERSION } from "@/lib/vars";
@@ -94,7 +79,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       {/* <SidebarFooter>
         <div className="p-1">
-          <SidebarOptInForm />
         </div>
       </SidebarFooter> */}
       {/* <SidebarRail /> */}
