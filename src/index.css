@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -44,6 +44,11 @@ All colors MUST be HSL.
     --bmi-normal: 152 60% 45%;
     --bmi-overweight: 36 90% 55%;
     --bmi-obese: 0 72% 55%;
+
+    --google-blue: 217 89% 61%;
+    --google-green: 151 68% 40%;
+    --facebook-blue: 220 46% 48%;
+    --twitter-bg: 200 10% 4%;
 
     --gradient-primary: linear-gradient(
       135deg,
@@ -107,5 +112,10 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  code,
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }

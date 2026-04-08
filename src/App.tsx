@@ -14,6 +14,7 @@ import DashboardPage from "./pages/IndexDashboard.tsx";
 import PassCheckPage from "./pages/IndexPassCheck.tsx";
 import ColorConverterPage from "./pages/IndexColorConverter.tsx";
 import BmiCalculatorPage from "./pages/IndexBmiCalculator.tsx";
+import MetaTagReviewPage from "./pages/IndexMetaTagReview.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="passcheck" element={<PassCheckPage />} />
             <Route path="color-converter" element={<ColorConverterPage />} />
             <Route path="bmi-calculator" element={<BmiCalculatorPage />} />
+            <Route path="meta-tag-review" element={<MetaTagReviewPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

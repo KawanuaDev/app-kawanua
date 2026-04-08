@@ -9,6 +9,7 @@ import {
   Palette,
   Image,
   Scale,
+  Tag,
 } from "lucide-react";
 
 export const data = {
@@ -63,6 +64,11 @@ export const data = {
           title: "QR Code Generator",
           url: "/qrcode",
           icon: QrCode,
+        },
+        {
+          title: "Meta Tag Preview",
+          url: "/meta-tag-preview",
+          icon: Tag,
         },
       ],
     },
