@@ -2,7 +2,7 @@ import { useState } from "react";
 import WhoisSearch from "@/components/whois/WhoisSearch";
 import WhoisResult, { type WhoisData } from "@/components/whois/WhoisResult";
 import DnsResult, { type DnsData } from "@/components/whois/DnsResult";
-import { fetchDnsRecords } from "@/lib/dns-api";
+import { fetchDnsRecords } from "@/lib/dnsApi";
 import { Globe } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";

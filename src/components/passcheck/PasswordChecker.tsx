@@ -27,7 +27,7 @@ import {
   getStrengthLabel,
   type PasswordStrength,
   type PwnedPasswordResult,
-} from "@/lib/password-checker";
+} from "@/lib/passwordChecker";
 
 export function PasswordChecker() {
   const [password, setPassword] = useState("");
