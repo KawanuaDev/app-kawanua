@@ -204,6 +204,28 @@ const PageSpeedPage = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Footer */}
+      <footer className="">
+        <div className="max-w-5xl mx-auto px-6 py-4">
+          <div className="flex flex-col items-center justify-between gap-4">
+            <div className="flex items-center gap-2 text-sm text-slate-600">
+              <span>
+                Powered by{" "}
+                <a
+                  href="https://pagespeed.web.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Google PageSpeed Insights
+                </a>
+                .
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

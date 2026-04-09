@@ -35,7 +35,7 @@ const MetricCard = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.5 + delay * 0.1 }}
-      className={`rounded-xl border p-5 transition-all hover:scale-[1.02] ${statusStyles[status]}`}
+      className={`bg-background rounded-xl border p-5 transition-all hover:scale-[1.02] ${statusStyles[status]}`}
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2.5">
