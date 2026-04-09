@@ -26,6 +26,7 @@ import FileChecksumPage from "./pages/IndexFileChecksum.tsx";
 import JsonCsvPage from "./pages/IndexJsonCsv.tsx";
 import RegexTesterPage from "./pages/IndexRegexTester.tsx";
 import MarkdownPreviewPage from "./pages/IndexMarkdownPreview.tsx";
+import ColorPaletteGeneratorPage from "./pages/IndexColorPaletteGenerator.tsx";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,10 @@ const App = () => (
             <Route path="jsoncsv" element={<JsonCsvPage />} />
             <Route path="regex-tester" element={<RegexTesterPage />} />
             <Route path="markdown-preview" element={<MarkdownPreviewPage />} />
+            <Route
+              path="color-palette-picker"
+              element={<ColorPaletteGeneratorPage />}
+            />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
