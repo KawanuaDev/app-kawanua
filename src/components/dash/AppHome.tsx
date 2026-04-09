@@ -24,6 +24,10 @@ const appMeta: Record<string, { accent: string; description: string }> = {
     accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
     description: "Cek apakah password kamu pernah bocor.",
   },
+  "/uuidgen": {
+    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    description: "Generate UUID dari teks atau URL apapun.",
+  },
   "/qrcode": {
     accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
     description: "Generate QR code dari teks atau URL apapun.",

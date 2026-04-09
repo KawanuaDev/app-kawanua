@@ -12,6 +12,7 @@ import {
   Tag,
   Code,
   Hash,
+  Asterisk,
 } from "lucide-react";
 
 export const data = {
@@ -81,6 +82,11 @@ export const data = {
           title: "Hash Generator",
           url: "/hashgen",
           icon: Hash,
+        },
+        {
+          title: "UUID Generator",
+          url: "/uuidgen",
+          icon: Asterisk,
         },
       ],
     },
