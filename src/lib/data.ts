@@ -88,6 +88,11 @@ export const data = {
           url: "/uuidgen",
           icon: Asterisk,
         },
+        {
+          title: "JWT Decoder",
+          url: "/jwtdecoder",
+          icon: Key,
+        },
       ],
     },
     {

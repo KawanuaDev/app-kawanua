@@ -40,6 +40,10 @@ const appMeta: Record<string, { accent: string; description: string }> = {
     accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
     description: "Encode dan decode base64 dari teks atau URL apapun.",
   },
+  "/jwtdecoder": {
+    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    description: "Decode, analisis dan verifikasi JSON Web Tokens.",
+  },
   "/meta-tag-preview": {
     accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
     description: "Review meta tag dari URL apapun.",
