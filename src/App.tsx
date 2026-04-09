@@ -20,6 +20,7 @@ import HashGenPage from "./pages/IndexHashGen.tsx";
 import UuidGenPage from "./pages/IndexUuidGen.tsx";
 import JwtDecoderPage from "./pages/IndexJwtDecoder.tsx";
 import PageSpeedPage from "./pages/IndexPageSpeed.tsx";
+import DomainLookupPage from "./pages/IndexDomainLookup.tsx";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="uuidgen" element={<UuidGenPage />} />
             <Route path="jwtdecoder" element={<JwtDecoderPage />} />
             <Route path="pagespeed" element={<PageSpeedPage />} />
+            <Route path="domainlookup" element={<DomainLookupPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

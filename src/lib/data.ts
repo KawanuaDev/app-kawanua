@@ -14,6 +14,7 @@ import {
   Hash,
   Asterisk,
   Gauge,
+  Globe,
 } from "lucide-react";
 
 export const data = {
@@ -85,6 +86,11 @@ export const data = {
         //   title: "WHOIS + DNS Lookup",
         //   url: "/whois",
         // },
+        {
+          title: "Domain Lookup",
+          url: "/domainlookup",
+          icon: Globe,
+        },
         {
           title: "QR Code Generator",
           url: "/qrcode",

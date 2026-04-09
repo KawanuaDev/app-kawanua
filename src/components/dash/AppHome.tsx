@@ -36,6 +36,10 @@ const appMeta: Record<string, { accent: string; description: string }> = {
     accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
     description: "Generate hash dari teks atau URL apapun.",
   },
+  "/domainlookup": {
+    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    description: "Cek ketersediaan domain dan informasi registrar.",
+  },
   "/base64": {
     accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
     description: "Encode dan decode base64 dari teks atau URL apapun.",
