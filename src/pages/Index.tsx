@@ -1,4 +1,5 @@
 import { AppSidebar } from "@/components/dash/AppSidebar";
+import { NavActions } from "@/components/dash/NavActions";
 import Footer from "@/components/Footer";
 import {
   Breadcrumb,
@@ -43,50 +44,7 @@ export default function Page() {
             </Breadcrumb>
           </div>
           <div className="flex items-center gap-2 px-4">
-            <Link
-              to="https://x.com/kawanua"
-              target="_blank"
-              className="flex items-center justify-center gap-2 bg-teal-700 hover:bg-teal-600 hover:shadow-lg transition-all duration-200 rounded-full p-2 text-white"
-            >
-              <img
-                src="https://cdn.simpleicons.org/x/fff"
-                alt="X"
-                className="h-4 w-4"
-              />
-            </Link>
-            <Link
-              to="https://github.com/kawanuaid"
-              target="_blank"
-              className="flex items-center justify-center gap-2 bg-teal-700 hover:bg-teal-600 hover:shadow-lg transition-all duration-200 rounded-full p-2 text-white"
-            >
-              <img
-                src="https://cdn.simpleicons.org/github/fff"
-                alt="facebook"
-                className="h-4 w-4"
-              />
-            </Link>
-            <Link
-              to="https://repo.kid.or.id/kawanua"
-              target="_blank"
-              className="flex items-center justify-center gap-2 bg-teal-700 hover:bg-teal-600 hover:shadow-lg transition-all duration-200 rounded-full p-2 text-white"
-            >
-              <img
-                src="https://cdn.simpleicons.org/forgejo/fff"
-                alt="forgejo"
-                className="h-4 w-4"
-              />
-            </Link>
-            <Link
-              to="https://facebook.com/kawanuaco"
-              target="_blank"
-              className="flex items-center justify-center gap-2 bg-teal-700 hover:bg-teal-600 hover:shadow-lg transition-all duration-200 rounded-full p-2 text-white"
-            >
-              <img
-                src="https://cdn.simpleicons.org/facebook/fff"
-                alt="facebook"
-                className="h-4 w-4"
-              />
-            </Link>
+            <NavActions />
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">

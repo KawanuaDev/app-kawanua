@@ -16,6 +16,7 @@ import {
   Gauge,
   Globe,
   Clock,
+  CodeSquare,
 } from "lucide-react";
 
 export const data = {
@@ -126,6 +127,11 @@ export const data = {
           title: "UUID Generator",
           url: "/uuidgen",
           icon: Asterisk,
+        },
+        {
+          title: "Regex Tester",
+          url: "/regex-tester",
+          icon: CodeSquare,
         },
       ],
     },

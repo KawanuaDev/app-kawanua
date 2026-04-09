@@ -60,11 +60,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
                         <SidebarMenuSubButton asChild isActive={item.isActive}>
-                          <Link to={item.url}>
-                            <span className="text-teal-500/40">
-                              <item.icon />
+                          <Link to={item.url} className="flex items-center">
+                            <span className="text-teal-500/60">
+                              <item.icon className="size-4" />
                             </span>{" "}
-                            <span>{item.title}</span>
+                            <span className="text-xs">{item.title}</span>
                           </Link>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
@@ -75,7 +75,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             ))}
           </SidebarMenu>
         </SidebarGroup>
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       {/* <SidebarFooter>
         <div className="p-1">
