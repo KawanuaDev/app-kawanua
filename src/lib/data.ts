@@ -103,6 +103,11 @@ export const data = {
           icon: Hash,
         },
         {
+          title: "JSON ↔ CSV Converter",
+          url: "/jsoncsv",
+          icon: FileText,
+        },
+        {
           title: "QR Code Generator",
           url: "/qrcode",
           icon: QrCode,

@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { data } from "@/lib/data";
-import { KeyRound, LucideIcon } from "lucide-react";
+import { KeyRound, LucideIcon, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -9,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 // Map URL path to accent color and description (icon diambil dari data.ts)
 const appMeta: Record<string, { accent: string; description: string }> = {
@@ -44,16 +46,28 @@ const appMeta: Record<string, { accent: string; description: string }> = {
     accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
     description: "Encode dan decode base64 dari teks atau URL apapun.",
   },
+  "/timestamp": {
+    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    description: "Konversi tanggal dan waktu ke format timestamp.",
+  },
+  "/jsoncsv": {
+    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    description: "Konversi JSON ke CSV dan sebaliknya.",
+  },
+  "/filechecksum": {
+    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    description: "Generate checksum dari file.",
+  },
   "/jwtdecoder": {
     accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
     description: "Decode, analisis dan verifikasi JSON Web Tokens.",
   },
   "/meta-tag-preview": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
     description: "Review meta tag dari URL apapun.",
   },
   "/pagespeed": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+    accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
     description:
       "Analisis performa website Anda, aksesibilitas, dan SEO dalam hitungan detik.",
   },
@@ -80,6 +94,8 @@ interface AppItem {
 }
 
 export default function AppHome() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   // Flatten all navMain items into a single list
   const allApps: (AppItem & { category: string })[] = data.navMain.flatMap(
     (group) =>
@@ -89,19 +105,53 @@ export default function AppHome() {
       })),
   );
 
+  const filteredApps = allApps.filter((app) => {
+    const searchLower = searchQuery.toLowerCase();
+    const meta = appMeta[app.url] ?? defaultMeta;
+    return (
+      app.title.toLowerCase().includes(searchLower) ||
+      app.category.toLowerCase().includes(searchLower) ||
+      meta.description.toLowerCase().includes(searchLower)
+    );
+  });
+
   return (
     <div className="p-6 h-full">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold tracking-tight">Selamat Datang 👋</h1>
-        <p className="text-muted-foreground text-sm mt-1">
-          Pilih aplikasi di bawah untuk mulai bekerja.
-        </p>
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">
+            Selamat Datang 👋
+          </h1>
+          <p className="text-muted-foreground text-sm mt-1">
+            Pilih aplikasi di bawah untuk mulai bekerja.
+          </p>
+        </div>
+        <div className="relative w-full sm:max-w-xs">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 z-10 text-muted-foreground" />
+          <Input
+            type="search"
+            placeholder="Cari aplikasi, kategori..."
+            className="w-full pl-9 bg-background/60 backdrop-blur-sm"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Cards Grid */}
+      {filteredApps.length === 0 && (
+        <div className="flex flex-col items-center justify-center py-16 text-center rounded-xl border border-dashed bg-muted/30">
+          <Search className="size-8 text-muted-foreground/50 mb-3" />
+          <h3 className="text-lg font-medium">Aplikasi tidak ditemukan</h3>
+          <p className="text-sm text-muted-foreground mt-1">
+            Tidak ada aplikasi yang cocok dengan pencarian &quot;{searchQuery}
+            &quot;.
+          </p>
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {allApps.map((app) => {
+        {filteredApps.map((app) => {
           const meta = appMeta[app.url] ?? defaultMeta;
           const Icon = app.icon ?? KeyRound;
 

@@ -23,6 +23,7 @@ import PageSpeedPage from "./pages/IndexPageSpeed.tsx";
 import DomainLookupPage from "./pages/IndexDomainLookup.tsx";
 import TimestampPage from "./pages/IndexTimestamp.tsx";
 import FileChecksumPage from "./pages/IndexFileChecksum.tsx";
+import JsonCsvPage from "./pages/IndexJsonCsv.tsx";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="domainlookup" element={<DomainLookupPage />} />
             <Route path="timestamp" element={<TimestampPage />} />
             <Route path="filechecksum" element={<FileChecksumPage />} />
+            <Route path="jsoncsv" element={<JsonCsvPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
