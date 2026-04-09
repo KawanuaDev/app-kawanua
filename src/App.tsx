@@ -22,6 +22,7 @@ import JwtDecoderPage from "./pages/IndexJwtDecoder.tsx";
 import PageSpeedPage from "./pages/IndexPageSpeed.tsx";
 import DomainLookupPage from "./pages/IndexDomainLookup.tsx";
 import TimestampPage from "./pages/IndexTimestamp.tsx";
+import FileChecksumPage from "./pages/IndexFileChecksum.tsx";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="pagespeed" element={<PageSpeedPage />} />
             <Route path="domainlookup" element={<DomainLookupPage />} />
             <Route path="timestamp" element={<TimestampPage />} />
+            <Route path="filechecksum" element={<FileChecksumPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

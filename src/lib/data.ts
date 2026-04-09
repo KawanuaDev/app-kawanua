@@ -98,6 +98,11 @@ export const data = {
           icon: Clock,
         },
         {
+          title: "File Checksum Generator",
+          url: "/filechecksum",
+          icon: Hash,
+        },
+        {
           title: "QR Code Generator",
           url: "/qrcode",
           icon: QrCode,
