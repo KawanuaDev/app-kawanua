@@ -134,7 +134,7 @@ interface AppItem {
 export default function AppHome() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 15;
+  const itemsPerPage = 12;
 
   // Flatten all navMain items into a single list and sort A-Z
   const allApps: (AppItem & { category: string })[] = data.navMain
@@ -174,10 +174,13 @@ export default function AppHome() {
       <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">
-            Selamat Datang 👋
+            <span className="text-primary font-extrabold">
+              {filteredApps.length}
+            </span>{" "}
+            Apps
           </h1>
           <p className="text-muted-foreground text-sm mt-1">
-            Pilih aplikasi di bawah untuk mulai bekerja.
+            Cari dan coba semua aplikasi yang tersedia.
           </p>
         </div>
         <div className="relative w-full sm:max-w-xs">
@@ -203,7 +206,7 @@ export default function AppHome() {
           </p>
         </div>
       )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {paginatedApps.map((app) => {
           const meta = appMeta[app.url] ?? defaultMeta;
           const Icon = app.icon ?? KeyRound;
@@ -236,12 +239,10 @@ export default function AppHome() {
                   /> */}
 
                   {/* Bottom-to-Top Gradient Overlay for Text Readability */}
-                  {/* <div className="absolute inset-0 z-0 bg-gradient-to-t from-background via-background/90 to-background/10" /> */}
                   <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/10" />
 
                   {/* Content Layer */}
                   <div className="relative z-10 flex flex-col gap-3 mt-auto">
-                    {/* <div className="flex w-10 h-10 items-center justify-center rounded-lg bg-background backdrop-blur-md border border-border/50 shadow-sm group-hover:scale-110 group-hover:bg-background transition-all duration-300"> */}
                     <div
                       className={cn(
                         "flex w-10 h-10 items-center justify-center rounded-lg bg-gradient-to-br backdrop-blur-md border border-border/50 shadow-sm group-hover:scale-110 bg-background transition-all duration-300",

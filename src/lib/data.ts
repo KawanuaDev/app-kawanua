@@ -68,7 +68,7 @@ export const data = {
           url: "/urlscanner",
           icon: Shield,
           isHighlight: false,
-          cover: "/assets/screenshots/passgen_tXM7Eg4Y7f.png",
+          cover: "/assets/screenshots/url-scanner_Ey9vwRm1WS.png",
         },
         {
           title: "Password Generator",
@@ -102,7 +102,7 @@ export const data = {
           url: "/meta-tag-preview",
           icon: Tag,
           isHighlight: false,
-          cover: "/assets/screenshots/seo-metatag-generator_0f7bmKEuzX.png",
+          cover: "/assets/screenshots/meta-tag-preview_8NyV0gB2kQ.png",
         },
         {
           title: "PageSpeed Insights",
