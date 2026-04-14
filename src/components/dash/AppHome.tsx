@@ -1,134 +1,20 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { data } from "@/lib/data";
-import {
-  KeyRound,
-  LucideIcon,
-  Search,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { data, defaultMeta } from "@/lib/data";
+import { KeyRound, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Card,
-  CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
+  CardDescription,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { NavItem } from "@/types/dashboard";
 
-// Map URL path to accent color and description (icon diambil dari data.ts)
-const appMeta: Record<string, { accent: string; description: string }> = {
-  "/image-optimizer": {
-    accent: "from-violet-500/20 to-purple-500/10 border-violet-500/30",
-    description: "Kompres & optimalkan gambar langsung di browser.",
-  },
-  "/color-palette-picker": {
-    accent: "from-violet-500/20 to-purple-500/10 border-violet-500/30",
-    description: "Ekstrak palette warna secara mudah dan cepat dari gambar.",
-  },
-  "/favicon-generator": {
-    accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
-    description: "Buat favicon untuk website Anda dengan mudah dan cepat.",
-  },
-  "/seo-metatag-generator": {
-    accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
-    description:
-      "Buat meta tag yang optimal untuk SEO website Anda dengan mudah dan cepat.",
-  },
-  "/passgen": {
-    accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
-    description: "Buat password kuat & acak secara instan.",
-  },
-  "/passcheck": {
-    accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
-    description: "Cek apakah password kamu pernah bocor.",
-  },
-  "/urlscanner": {
-    accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
-    description:
-      "Periksa domain atau URL terhadap 90+ vendor keamanan secara instan.",
-  },
-  "/uuidgen": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Generate UUID dari teks atau URL apapun.",
-  },
-  "/qrcode": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Generate QR code dari teks atau URL apapun.",
-  },
-  "/hashgen": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Generate hash dari teks atau URL apapun.",
-  },
-  "/domainlookup": {
-    accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
-    description: "Cek ketersediaan domain dan informasi registrar.",
-  },
-  "/base64": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Encode dan decode base64 dari teks atau URL apapun.",
-  },
-  "/timestamp": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Konversi tanggal dan waktu ke format timestamp.",
-  },
-  "/jsoncsv": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Konversi JSON ke CSV dan sebaliknya.",
-  },
-  "/regex-tester": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Uji ekspresi reguler Anda secara real-time.",
-  },
-  "/filechecksum": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Generate checksum dari file.",
-  },
-  "/markdown-preview": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Tampilkan hasil markdown secara real-time.",
-  },
-  "/unit-converters": {
-    accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
-    description: "Konversi berbagai jenis satuan dalam satu platform.",
-  },
-  "/jwtdecoder": {
-    accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
-    description: "Decode, analisis dan verifikasi JSON Web Tokens.",
-  },
-  "/meta-tag-preview": {
-    accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
-    description: "Review meta tag dari URL apapun.",
-  },
-  "/pagespeed": {
-    accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
-    description:
-      "Analisis performa website Anda, aksesibilitas, dan SEO dalam hitungan detik.",
-  },
-  "/color-converter": {
-    accent: "from-violet-500/20 to-purple-500/10 border-violet-500/30",
-    description: "Konversi warna antara HEX, RGB, HSL, OKLCH, HWB, CMYK.",
-  },
-  "/bmi-calculator": {
-    accent: "from-emerald-500/20 to-green-500/10 border-emerald-500/30",
-    description: "Kalkulator BMI untuk menghitung indeks massa tubuh.",
-  },
-};
-
-const defaultMeta = {
-  accent: "from-muted/50 to-muted/10 border-muted-foreground/20",
-  description: "Buka aplikasi ini untuk mulai menggunakannya.",
-};
-
-interface AppItem {
-  title: string;
-  url: string;
-  isActive?: boolean;
-  icon?: LucideIcon;
-  cover?: string;
+interface AppItem extends NavItem {
+  category: string;
 }
 
 export default function AppHome() {
@@ -148,11 +34,11 @@ export default function AppHome() {
 
   const filteredApps = allApps.filter((app) => {
     const searchLower = searchQuery.toLowerCase();
-    const meta = appMeta[app.url] ?? defaultMeta;
+    const description = app.description || defaultMeta.description;
     return (
       app.title.toLowerCase().includes(searchLower) ||
       app.category.toLowerCase().includes(searchLower) ||
-      meta.description.toLowerCase().includes(searchLower)
+      description.toLowerCase().includes(searchLower)
     );
   });
 
@@ -208,7 +94,8 @@ export default function AppHome() {
       )}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {paginatedApps.map((app) => {
-          const meta = appMeta[app.url] ?? defaultMeta;
+          const accent = app.accent || defaultMeta.accent;
+          const description = app.description || defaultMeta.description;
           const Icon = app.icon ?? KeyRound;
 
           return (
@@ -218,8 +105,7 @@ export default function AppHome() {
                   className={cn(
                     "group relative flex flex-col justify-end overflow-hidden rounded-xl border min-h-[250px] p-5",
                     "transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
-                    meta.accent.match(/border-\\S+/g)?.join(" ") ||
-                      "border-border",
+                    accent.match(/border-\S+/g)?.join(" ") || "border-border",
                   )}
                 >
                   {/* Background Image Layer */}
@@ -230,14 +116,6 @@ export default function AppHome() {
                     />
                   )}
 
-                  {/* Accent Gradient Overlay */}
-                  {/* <div
-                    className={cn(
-                      "absolute inset-0 z-0 bg-gradient-to-br opacity-60 transition-opacity duration-300 group-hover:opacity-80",
-                      meta.accent.replace(/border-\\S+/g, "").trim(),
-                    )}
-                  /> */}
-
                   {/* Bottom-to-Top Gradient Overlay for Text Readability */}
                   <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/10" />
 
@@ -246,7 +124,7 @@ export default function AppHome() {
                     <div
                       className={cn(
                         "flex w-10 h-10 items-center justify-center rounded-lg bg-gradient-to-br backdrop-blur-md border border-border/50 shadow-sm group-hover:scale-110 bg-background transition-all duration-300",
-                        meta.accent,
+                        accent,
                       )}
                     >
                       <Icon className="size-5 text-foreground" />
@@ -259,7 +137,7 @@ export default function AppHome() {
                         {app.title}
                       </CardTitle>
                       <CardDescription className="leading-snug text-slate-200/70 line-clamp-2">
-                        {(appMeta[app.url] ?? defaultMeta).description}
+                        {description}
                       </CardDescription>
                     </CardHeader>
                   </div>

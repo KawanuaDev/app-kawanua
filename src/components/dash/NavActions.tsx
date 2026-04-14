@@ -76,7 +76,7 @@ const data = [
     },
     {
       label: "Ajukan Fitur",
-      url: "https://github.com/KawanuaDev/app-kawanua/issues/new",
+      url: "https://github.com/KawanuaDev/app-kawanua/discussions/categories/ideas",
       icon: <GitBranch className="size-4 text-primary" />,
     },
     {
@@ -148,7 +148,12 @@ export function NavActions() {
 
   return (
     <div className="flex items-center gap-2 text-sm">
-      <Button variant="ghost" size="icon" className="h-7 w-7" onClick={toggleTheme}>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="h-7 w-7"
+        onClick={toggleTheme}
+      >
         {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
       </Button>
       {/* <Button variant="ghost" size="icon" className="h-7 w-7">

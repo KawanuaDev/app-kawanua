@@ -26,8 +26,14 @@ import {
   ArrowLeftRight,
   Shield,
 } from "lucide-react";
+import { NavGroup, NavItem } from "@/types/dashboard";
 
-export const data = {
+export const defaultMeta = {
+  accent: "from-muted/50 to-muted/10 border-muted-foreground/20",
+  description: "Buka aplikasi ini untuk mulai menggunakannya.",
+};
+
+export const data: { navMain: NavGroup[]; navSecondary: any[] } = {
   navMain: [
     {
       title: "Visual",
@@ -40,6 +46,10 @@ export const data = {
           isHighlight: true,
           icon: Image,
           cover: "/assets/screenshots/image-optimizer_j0NShGOYel.png",
+          accent: "from-violet-500/20 to-purple-500/10 border-violet-500/30",
+          description: "Kompres & optimalkan gambar langsung di browser.",
+          keywords:
+            "image optimizer, kompres gambar, compress image, optimize image, png, jpg, webp",
         },
         {
           title: "Color Converter",
@@ -48,6 +58,10 @@ export const data = {
           isHighlight: false,
           icon: Palette,
           cover: "/assets/screenshots/color-converter_GDpoaAY4YM.png",
+          accent: "from-violet-500/20 to-purple-500/10 border-violet-500/30",
+          description: "Konversi warna antara HEX, RGB, HSL, OKLCH, HWB, CMYK.",
+          keywords:
+            "color converter, hex, rgb, hsl, oklch, hwb, cmyk, konversi warna",
         },
         {
           title: "Color Palette Picker",
@@ -56,6 +70,11 @@ export const data = {
           isHighlight: false,
           icon: Pipette,
           cover: "/assets/screenshots/color-palette-picker_8ljNF9Db1c.png",
+          accent: "from-violet-500/20 to-purple-500/10 border-violet-500/30",
+          description:
+            "Ekstrak palette warna secara mudah dan cepat dari gambar.",
+          keywords:
+            "color palette picker, ekstrak warna dari gambar, image to palette",
         },
       ],
     },
@@ -69,6 +88,11 @@ export const data = {
           icon: Shield,
           isHighlight: false,
           cover: "/assets/screenshots/url-scanner_Ey9vwRm1WS.png",
+          accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
+          description:
+            "Periksa domain atau URL terhadap 90+ vendor keamanan secara instan.",
+          keywords:
+            "url scanner, scan url, cek url, web vulnerabilities, cek keamanan web",
         },
         {
           title: "Password Generator",
@@ -76,6 +100,9 @@ export const data = {
           icon: RectangleEllipsis,
           isHighlight: false,
           cover: "/assets/screenshots/passgen_tXM7Eg4Y7f.png",
+          accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
+          description: "Buat password kuat & acak secara instan.",
+          keywords: "password generator, random password, buat password kuat",
         },
         {
           title: "Password Checker",
@@ -83,6 +110,9 @@ export const data = {
           icon: Radar,
           isHighlight: true,
           cover: "/assets/screenshots/passcheck_HCtKHmwDV6.png",
+          accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
+          description: "Cek apakah password kamu pernah bocor.",
+          keywords: "password checker, cek bocor password, pwned, data breach",
         },
         {
           title: "JWT Decoder",
@@ -90,6 +120,9 @@ export const data = {
           icon: Binary,
           isHighlight: false,
           cover: "/assets/screenshots/jwtdecoder_CZrrgQAGAm.png",
+          accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
+          description: "Decode, analisis dan verifikasi JSON Web Tokens.",
+          keywords: "jwt decoder, json web token, jwt parser, verify jwt",
         },
       ],
     },
@@ -103,6 +136,10 @@ export const data = {
           icon: Tag,
           isHighlight: false,
           cover: "/assets/screenshots/meta-tag-preview_8NyV0gB2kQ.png",
+          accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
+          description: "Review meta tag dari URL apapun.",
+          keywords:
+            "meta tag preview, seo, review meta tag, og tag, twitter card",
         },
         {
           title: "PageSpeed Insights",
@@ -110,6 +147,11 @@ export const data = {
           icon: Gauge,
           isHighlight: true,
           cover: "/assets/screenshots/pagespeed_c5YE7Zl7cE.png",
+          accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
+          description:
+            "Analisis performa website Anda, aksesibilitas, dan SEO dalam hitungan detik.",
+          keywords:
+            "pagespeed insights, core web vitals, speed test, analisis performa website",
         },
         {
           title: "Domain Lookup",
@@ -117,6 +159,9 @@ export const data = {
           icon: Globe,
           isHighlight: false,
           cover: "/assets/screenshots/domainlookup_WWShZtTgso.png",
+          accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
+          description: "Cek ketersediaan domain dan informasi registrar.",
+          keywords: "domain lookup, cek domain, registrar, rdap",
         },
         {
           title: "Favicon Generator",
@@ -124,6 +169,10 @@ export const data = {
           icon: BookImage,
           isHighlight: false,
           cover: "/assets/screenshots/favicon-generator_IJ6LIqHj84.png",
+          accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
+          description:
+            "Buat favicon untuk website Anda dengan mudah dan cepat.",
+          keywords: "favicon generator, buat favicon, ico, icon website",
         },
         {
           title: "SEO Meta Tag Generator",
@@ -131,6 +180,11 @@ export const data = {
           icon: Tags,
           isHighlight: true,
           cover: "/assets/screenshots/seo-metatag-generator_0f7bmKEuzX.png",
+          accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
+          description:
+            "Buat meta tag yang optimal untuk SEO website Anda dengan mudah dan cepat.",
+          keywords:
+            "seo meta tag generator, buat meta tag, meta description, seo tools",
         },
       ],
     },
@@ -144,6 +198,10 @@ export const data = {
           icon: Weight,
           isHighlight: true,
           cover: "/assets/screenshots/bmi-calculator_YEb6zMeGNJ.png",
+          accent: "from-emerald-500/20 to-green-500/10 border-emerald-500/30",
+          description: "Kalkulator BMI untuk menghitung indeks massa tubuh.",
+          keywords:
+            "bmi calculator, kalkulator bmi, ideal weight, berat badan ideal",
         },
       ],
     },
@@ -151,16 +209,27 @@ export const data = {
       title: "Utilities",
       url: "#",
       items: [
-        // {
-        //   title: "WHOIS + DNS Lookup",
-        //   url: "/whois",
-        // },
+        {
+          title: "WHOIS Lookup",
+          url: "/whois",
+          icon: Globe,
+          isHighlight: false,
+          cover: "/assets/screenshots/domainlookup_WWShZtTgso.png",
+          accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
+          description: "Cek ketersediaan domain dan informasi registrar.",
+          keywords:
+            "whois lookup, cek domain, domain info, whois, domain availability",
+        },
         {
           title: "Timestamp Converter",
           url: "/timestamp",
           icon: Clock,
           isHighlight: false,
           cover: "/assets/screenshots/timestamp_vUDVAxGfur.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Konversi tanggal dan waktu ke format timestamp.",
+          keywords:
+            "timestamp converter, epoch, unix timestamp, konversi waktu",
         },
         {
           title: "File Checksum Generator",
@@ -168,6 +237,9 @@ export const data = {
           icon: FileDigit,
           isHighlight: false,
           cover: "/assets/screenshots/filechecksum_XV57JQ5yzj.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Generate checksum dari file.",
+          keywords: "file checksum, md5 file, sha256 file, verifikasi file",
         },
         {
           title: "JSON ↔ CSV Converter",
@@ -175,6 +247,10 @@ export const data = {
           icon: FileCog,
           isHighlight: false,
           cover: "/assets/screenshots/jsoncsv_7aF9McYK72.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Konversi JSON ke CSV dan sebaliknya.",
+          keywords:
+            "json to csv, csv to json, json csv converter, konversi data",
         },
         {
           title: "QR Code Generator",
@@ -182,6 +258,9 @@ export const data = {
           icon: QrCode,
           isHighlight: false,
           cover: "/assets/screenshots/qrcode_UCDQrIXi96.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Generate QR code dari teks atau URL apapun.",
+          keywords: "qr code generator, buat qr code, qr code",
         },
         {
           title: "Base64 Studio",
@@ -189,6 +268,9 @@ export const data = {
           icon: Braces,
           isHighlight: false,
           cover: "/assets/screenshots/base64_cUSalTcz5n.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Encode dan decode base64 dari teks atau URL apapun.",
+          keywords: "base64, encode base64, decode base64, base64 converter",
         },
         {
           title: "Hash Generator",
@@ -196,6 +278,10 @@ export const data = {
           icon: Hash,
           isHighlight: false,
           cover: "/assets/screenshots/hashgen_tqdCyaDsj5.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Generate hash dari teks atau URL apapun.",
+          keywords:
+            "hash generator, md5, sha1, sha256, sha512, bcrypt, pembuat hash",
         },
         {
           title: "UUID Generator",
@@ -203,6 +289,9 @@ export const data = {
           icon: Asterisk,
           isHighlight: false,
           cover: "/assets/screenshots/uuidgen_GAZj4QUoeG.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Generate UUID dari teks atau URL apapun.",
+          keywords: "uuid generator, guid, generate uuid, uuid v4",
         },
         {
           title: "Regex Tester",
@@ -210,6 +299,9 @@ export const data = {
           icon: Regex,
           isHighlight: false,
           cover: "/assets/screenshots/regex-tester_E3PR2ut1IG.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Uji ekspresi reguler Anda secara real-time.",
+          keywords: "regex tester, regular expression, uji regex, regex parser",
         },
         {
           title: "Markdown Preview",
@@ -217,6 +309,9 @@ export const data = {
           icon: FileSearch,
           isHighlight: false,
           cover: "/assets/screenshots/markdown-preview_WXseOgX5XH.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Tampilkan hasil markdown secara real-time.",
+          keywords: "markdown preview, markdown editor, real-time markdown",
         },
         {
           title: "Unit Converters",
@@ -224,6 +319,10 @@ export const data = {
           icon: ArrowLeftRight,
           isHighlight: false,
           cover: "/assets/screenshots/unit-converters_0ABbZ7EDEr.png",
+          accent: "from-sky-500/20 to-cyan-500/10 border-sky-500/30",
+          description: "Konversi berbagai jenis satuan dalam satu platform.",
+          keywords:
+            "unit converter, konversi satuan, satuan, konversi, digital storage, time, data transfer rate, length metric, length imperial, area metric, area imperial, volume metric, volume imperial, mass metric, mass imperial, temperature, speed, pressure, energy, power, frequency, angle, currency",
         },
       ],
     },
