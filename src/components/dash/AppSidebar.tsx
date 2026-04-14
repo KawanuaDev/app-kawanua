@@ -64,15 +64,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   </span>
                 </SidebarMenuButton>
                 {item.items?.length ? (
-                  <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
+                  <SidebarMenuSub className="border-l-0 px-1.5 mx-0">
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild className="min-h-10">
-                          <Link to={item.url} className="flex items-center">
-                            <span className="text-primary">
-                              <item.icon className="size-4" />
-                            </span>{" "}
-                            <span className="text-xs">{item.title}</span>
+                        <SidebarMenuSubButton asChild className="min-h-9">
+                          <Link
+                            to={item.url}
+                            className="flex items-center justify-between"
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="text-primary">
+                                <item.icon className="size-4" />
+                              </span>{" "}
+                              <span className="text-xs">{item.title}</span>
+                            </div>
                             {item.isHighlight && (
                               <span className="text-xs text-amber-500">★</span>
                             )}
