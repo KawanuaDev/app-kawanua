@@ -28,6 +28,7 @@ import {
   SwatchBook,
   Maximize,
   Star,
+  ShieldEllipsis,
 } from "lucide-react";
 import { NavGroup, NavItem } from "@/types/dashboard";
 
@@ -121,6 +122,18 @@ export const data: { navMain: NavGroup[]; navSecondary: NavSecondaryItem[] } = {
             "Periksa domain atau URL terhadap 90+ vendor keamanan secara instan.",
           keywords:
             "url scanner, scan url, cek url, web vulnerabilities, cek keamanan web",
+        },
+        {
+          title: "Security Scanner",
+          url: "/security-scan",
+          icon: ShieldEllipsis,
+          isHighlight: true,
+          isPromoted: false,
+          cover: "/assets/screenshots/seurity-scan_qatb45tj07.png",
+          accent: "from-amber-500/20 to-yellow-500/10 border-amber-500/30",
+          description: "Pemindaian kerentanan keamanan situs web Anda.",
+          keywords:
+            "security scan, web security, vulnerability scanner, keamanan website",
         },
         {
           title: "Password Generator",

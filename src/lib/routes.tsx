@@ -30,6 +30,8 @@ import SeoMetatagGenPage from "@/pages/IndexSeoMetaTag.tsx";
 import UnitConverterPage from "@/pages/IndexUnitConverter";
 import TailwindColorPage from "@/pages/IndexTailwindColor";
 import ImagePlaceholderPage from "@/pages/IndexImagePlaceholder";
+import SecurityScanPage from "@/pages/IndexSecurityScan";
+import RouteError from "@/pages/RouteError.tsx";
 
 // Create a lookup map for app metadata from data.ts
 const appLookup = new Map(
@@ -163,8 +165,11 @@ export const router = createBrowserRouter([
         element: <Page />,
         children: [
           {
-            index: true,
-            element: <DashboardPage />,
+            errorElement: <RouteError />,
+            children: [
+              {
+                index: true,
+                element: <DashboardPage />,
             handle: {
               title: "Home",
               description:
@@ -304,6 +309,11 @@ export const router = createBrowserRouter([
             handle: getMeta("image-placeholder"),
           },
           {
+            path: "security-scan",
+            element: <SecurityScanPage />,
+            handle: getMeta("security-scan"),
+          },
+          {
             path: "*",
             element: <NotFound />,
             handle: {
@@ -312,6 +322,8 @@ export const router = createBrowserRouter([
               keywords: "404, not found, halaman tidak ditemukan",
               is404: true,
             },
+          },
+            ],
           },
         ],
       },

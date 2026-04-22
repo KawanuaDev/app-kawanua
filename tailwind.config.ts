@@ -27,6 +27,7 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        surface: "hsl(var(--surface))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -47,6 +48,14 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -115,12 +124,23 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "gauge-fill": {
+          from: { "stroke-dashoffset": "364" },
+          to: { "stroke-dashoffset": "var(--gauge-offset)" },
+        },
+        "count-up": {
+          from: { opacity: "0", transform: "translateY(6px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
         "slide-up": "slide-up 0.4s ease-out",
+        "gauge-fill":
+          "gauge-fill 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
+        "count-up": "count-up 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
       },
     },
   },
