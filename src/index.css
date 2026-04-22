@@ -11,6 +11,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 210 20% 98%;
+    --surface: 0 0% 100%;
     --foreground: 210 30% 10%;
 
     --card: 0 0% 100%;
@@ -30,6 +31,12 @@ All colors MUST be HSL.
 
     --accent: 225.4 84% 49%;
     --accent-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -267,5 +274,117 @@ All colors MUST be HSL.
       hsl(var(--primary) / 0.1) 0%,
       transparent 60%
     );
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* ─── Print / Export PDF styles ─────────────────────────────────────────────── */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 16mm 14mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+    color: #111827 !important;
+    font-size: 11px !important;
+  }
+
+  /* Hide interactive / navigation elements */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Force print header to show */
+  .print\:flex {
+    display: flex !important;
+  }
+
+  /* Animations: disable */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Remove sticky nav */
+  nav {
+    position: static !important;
+    display: none !important;
+  }
+
+  /* Layout: stack sidebar below main content */
+  .lg\:grid-cols-3 {
+    display: block !important;
+  }
+
+  .lg\:col-span-2 {
+    width: 100% !important;
+  }
+
+  /* Cards: clean borders, no shadows */
+  .shadow-card-md,
+  .shadow-card-sm {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  /* Avoid page breaks inside cards */
+  section,
+  .bg-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Ensure section headers repeat if table spans pages */
+  thead {
+    display: table-header-group;
+  }
+
+  /* VirusTotal dark card: lighten for print */
+  .bg-zinc-900 {
+    background: #f9fafb !important;
+    color: #111827 !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  .bg-zinc-800\/60 {
+    background: #f3f4f6 !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  .text-zinc-100,
+  .text-zinc-300,
+  .text-zinc-400,
+  .text-zinc-500 {
+    color: #374151 !important;
+  }
+
+  /* Remove hover effects */
+  .hover\:bg-muted\/30:hover {
+    background: transparent !important;
+  }
+
+  /* Reduce padding for denser print layout */
+  .px-6 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .py-8 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  /* Make links visible */
+  a[href]::after {
+    content: none !important;
   }
 }
