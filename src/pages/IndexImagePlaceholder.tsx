@@ -105,6 +105,15 @@ function StarIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function escapeHtml(unsafe: string) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function ImagePlaceholderPage() {
   const [width, setWidth] = useState(640);
   const [height, setHeight] = useState(480);
@@ -128,6 +137,12 @@ function ImagePlaceholderPage() {
     } else if (color) {
       url += `/cccccc/${color}`;
     }
+
+    // Safety check to satisfy CodeQL and prevent potential protocol injection
+    if (!url.startsWith("https://i.kid.or.id/")) {
+      return "";
+    }
+
     return url;
   }, [width, height, encodedText, bg, color]);
 
@@ -150,13 +165,16 @@ function ImagePlaceholderPage() {
   }, []);
 
   const codeSnippets = useMemo(() => {
+    const escapedUrl = escapeHtml(imageUrl);
+    const escapedText = escapeHtml(displayText);
+
     switch (codeTab) {
       case "html":
-        return `<img src="${imageUrl}" alt="${displayText}" width="${width}" height="${height}" />`;
+        return `<img src="${escapedUrl}" alt="${escapedText}" width="${width}" height="${height}" />`;
       case "markdown":
-        return `![${displayText}](${imageUrl})`;
+        return `![${escapedText}](${escapedUrl})`;
       case "css":
-        return `background-image: url('${imageUrl}');
+        return `background-image: url('${escapedUrl}');
 background-size: cover;
 width: ${width}px;
 height: ${height}px;`;
