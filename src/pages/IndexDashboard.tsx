@@ -91,16 +91,6 @@ function HighlightCard() {
             Mulai dengan aplikasi pilihan Developer kami berikut.
           </p>
         </div>
-        {/* <div className="relative w-full sm:max-w-xs">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 z-10 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Cari aplikasi, kategori..."
-            className="w-full pl-9 bg-background/60 backdrop-blur-sm"
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-        </div> */}
       </div>
       <div className="flex items-center justify-center">
         <Carousel
@@ -135,10 +125,8 @@ function HighlightCard() {
 
                         {/* Content Layer */}
                         <div className="relative z-10 flex flex-col gap-3 mt-auto">
-                          <div className="flex w-10 h-10 items-center justify-center rounded-lg bg-gradient-to-br backdrop-blur-md border border-border/50 shadow-sm group-hover:scale-110 bg-background transition-all duration-300">
-                            {Icon && (
-                              <Icon className="size-5 text-foreground" />
-                            )}
+                          <div className="flex w-10 h-10 mb-1 group-hover:scale-110 transition-all duration-300">
+                            {Icon && <Icon className="size-8 text-white" />}
                           </div>
                           <div className="flex flex-col gap-0.5 p-0">
                             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 drop-shadow-sm">

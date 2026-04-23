@@ -105,7 +105,7 @@ export default function AppHome() {
                   className={cn(
                     "group relative flex flex-col justify-end overflow-hidden rounded-xl border min-h-[250px] p-5",
                     "transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
-                    accent.match(/border-\S+/g)?.join(" ") || "border-border",
+                    // accent.match(/border-\S+/g)?.join(" ") || "border-border",
                   )}
                 >
                   {/* Background Image Layer */}
@@ -121,14 +121,14 @@ export default function AppHome() {
 
                   {/* Content Layer */}
                   <div className="relative z-10 flex flex-col gap-3 mt-auto">
-                    <div
+                    {/* <div
                       className={cn(
-                        "flex w-10 h-10 items-center justify-center rounded-lg bg-gradient-to-br backdrop-blur-md border border-border/50 shadow-sm group-hover:scale-110 bg-background transition-all duration-300",
+                        "flex w-10 h-10 mb-1 group-hover:scale-110 transition-all duration-300",
                         accent,
                       )}
                     >
-                      <Icon className="size-5 text-foreground" />
-                    </div>
+                      <Icon className="size-8 text-white" />
+                    </div> */}
                     <CardHeader className="flex flex-col gap-0.5 p-0">
                       <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 drop-shadow-sm">
                         {app.category}
@@ -144,34 +144,6 @@ export default function AppHome() {
                 </Card>
               </article>
             </Link>
-            // <Link
-            //   key={app.url}
-            //   to={app.url}
-            //   className="link-card overflow-hidden translate-y-0 hover:-translate-y-[2px] transition-all duration-200 rounded-lg relative"
-            // >
-            //   <article className={"card" + app.url.replace("/", "-")}>
-            //     <Card
-            //       className={cn(
-            //         "group flex flex-col md:flex-row gap-4 rounded-xl border border-primary bg-slate-100 bg-gradient-to-br p-5",
-            //         // "transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg",
-            //         // meta.accent,
-            //       )}
-            //     >
-            //       <div className="flex w-1/6 size-12 items-center justify-center rounded-lg bg-background/60 backdrop-blur-sm border border-border/50 shadow-sm group-hover:scale-110 transition-transform duration-200">
-            //         <Icon className="size-6 text-foreground" />
-            //       </div>
-            //       <CardHeader className="flex w-5/6 flex-col gap-0.5 p-0">
-            //         <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-            //           {app.category}
-            //         </span>
-            //         <CardTitle className="leading-tight">{app.title}</CardTitle>
-            //         <CardDescription className="leading-snug">
-            //           {(appMeta[app.url] ?? defaultMeta).description}
-            //         </CardDescription>
-            //       </CardHeader>
-            //     </Card>
-            //   </article>
-            // </Link>
           );
         })}
       </div>

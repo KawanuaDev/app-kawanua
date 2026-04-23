@@ -129,7 +129,7 @@ export function NavActions() {
   const [isDark, setIsDark] = React.useState(false);
 
   React.useEffect(() => {
-    setIsOpen(true);
+    setIsOpen(false);
     setIsDark(document.documentElement.classList.contains("dark"));
   }, []);
 
