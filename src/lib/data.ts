@@ -254,7 +254,7 @@ export const data: { navMain: NavGroup[]; navSecondary: NavSecondaryItem[] } = {
           icon: FileImage,
           isHighlight: false,
           isPromoted: false,
-          cover: "/assets/screenshots/image-base64-converter_DaKbwu96vU.png",
+          cover: "/assets/screenshots/image-base64-converter_mxfWAp2npd.png",
           accent: "from-pink-500/20 to-fuchsia-500/10 border-pink-500/30",
           description:
             "Ubah gambar menjadi base64 untuk digunakan dalam web development dengan mudah dan cepat.",
