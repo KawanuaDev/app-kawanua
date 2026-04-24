@@ -129,16 +129,23 @@ function ImagePlaceholderPage() {
   const encodedText = encodeURIComponent(displayText);
 
   const imageUrl = useMemo(() => {
+    // Sanitize and encode all components to prevent XSS and path injection
+    const safeBg = bg ? encodeURIComponent(bg.replace(/[^a-fA-F0-9]/g, "")) : "";
+    const safeColor = color
+      ? encodeURIComponent(color.replace(/[^a-fA-F0-9]/g, ""))
+      : "";
+
     let url = `https://i.kid.or.id/${width}/${height}/${encodedText}`;
-    if (bg && color) {
-      url += `/${bg}/${color}`;
-    } else if (bg) {
-      url += `/${bg}`;
-    } else if (color) {
-      url += `/cccccc/${color}`;
+    if (safeBg && safeColor) {
+      url += `/${safeBg}/${safeColor}`;
+    } else if (safeBg) {
+      url += `/${safeBg}`;
+    } else if (safeColor) {
+      // Use hex regex directly if possible or encoded version
+      url += `/cccccc/${safeColor}`;
     }
 
-    // Safety check to satisfy CodeQL and prevent potential protocol injection
+    // Strict safety check for the final URL protocol and domain
     if (!url.startsWith("https://i.kid.or.id/")) {
       return "";
     }
@@ -425,7 +432,10 @@ height: ${height}px;`;
                               : "#cccccc"
                         }
                         onChange={(e) => {
-                          setBg(e.target.value.substring(1));
+                          const hexValue = e.target.value
+                            .substring(1)
+                            .replace(/[^a-fA-F0-9]/g, "");
+                          setBg(hexValue);
                           setImageKey((k) => k + 1);
                         }}
                         className="w-10 h-10 p-1 shrink-0 cursor-pointer rounded-md"
@@ -467,7 +477,10 @@ height: ${height}px;`;
                               : "#000000"
                         }
                         onChange={(e) => {
-                          setColor(e.target.value.substring(1));
+                          const hexValue = e.target.value
+                            .substring(1)
+                            .replace(/[^a-fA-F0-9]/g, "");
+                          setColor(hexValue);
                           setImageKey((k) => k + 1);
                         }}
                         className="w-10 h-10 p-1 shrink-0 cursor-pointer rounded-md"
