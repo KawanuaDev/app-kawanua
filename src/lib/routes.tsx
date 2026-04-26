@@ -135,9 +135,9 @@ function RootMetaLayout() {
       }
     } else {
       // Fallback defaults (e.g. root layout without handle)
-      const defaultTitle = "App Kawanua";
+      const defaultTitle = "App Kawanua by Kawanua Indo Digital";
       const defaultDesc =
-        "Aplikasi Kawanua terbaik untuk kebutuhan Anda dari Kawanua Indo Digital.";
+        "Tools gratis untuk developer dan profesional IT, dikembangkan oleh Kawanua Indo Digital, penyedia solusi teknologi untuk bisnis dan pemerintahan.";
       const defaultKeywords =
         "app kawanua, tools kawanua, aplikasi utilitas, web tools";
 

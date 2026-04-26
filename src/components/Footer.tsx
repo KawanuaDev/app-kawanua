@@ -7,18 +7,27 @@
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
+    <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground space-y-2">
       <p>
-        © {new Date().getFullYear()}{" "}
+        App Kawanua adalah produk dari{" "}
         <a
-          href="http://kawanua.id"
+          href="https://kawanua.co"
           className="text-primary hover:text-slate-500"
           target="_blank"
           rel="noopener"
         >
           Kawanua Indo Digital
         </a>
-        . Dirilis di bawah lisensi{" "}
+        , penyedia solusi teknologi digital untuk bisnis dan instansi
+        pemerintah.
+        <br />
+        Web App · DevOps · Security Assessment · Open Data
+      </p>
+      <p>
+        © {new Date().getFullYear()} Kawanua Indo Digital. Terdaftar legal di
+        Sistem OSS Indonesia dengan NIB: 1255000560539.
+        <br />
+        Dirilis di bawah lisensi{" "}
         <a
           href="https://github.com/KawanuaDev/app-kawanua#-lisensi"
           className="text-primary hover:text-slate-500"
