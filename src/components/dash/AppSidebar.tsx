@@ -65,7 +65,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarMenuButton
                       asChild
                       isActive={location.pathname === item.url && item.url !== "/"}
-                      tooltip={item.title}
+                      tooltip={{ children: item.title, className: "z-[100]" }}
                     >
                       <Link to={item.url}>
                         <item.icon className="text-primary shrink-0" />

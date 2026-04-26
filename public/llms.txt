@@ -1,41 +1,44 @@
-# App Kawanua
+# App Kawanua by Kawanua Indo Digital
 
-> Aplikasi Kawanua terbaik untuk kebutuhan Anda.
+> Tools gratis untuk developer dan profesional IT, dikembangkan oleh Kawanua Indo Digital, penyedia solusi teknologi untuk bisnis dan pemerintahan.
 
 This application is built as a Single Page Application (SPA) using React and Vite. 
 It provides various utility tools and features designed for the Kawanua community and users in general.
 
 ## Key Information
-- **Domain**: https://app.kawanua.id
+- **Domain**: https://app.kawanua.co
 - **Target Audience**: Kawanua community, developer and users needing daily utilities.
 - **Tech Stack**: React, TypeScript, Vite, TailwindCSS.
 
 ## Available Tools and Routes
-- **Dashboard**: `/`
-- **Image Optimizer**: `/image-optimizer` - Optimize images for the web.
-- **QR Code Generator**: `/qrcode` - Generate custom QR codes.
-- **Password Generator**: `/passgen` - Generate secure passwords.
-- **URL Scanner**: `/urlscanner` - Scan URLs for safety or metadata.
-- **WHOIS Lookup**: `/whois` - Query domain registration data.
-- **Password Checker**: `/passcheck` - Check if a password has been compromised.
-- **Color Converter**: `/color-converter` - Convert between different color formats.
-- **BMI Calculator**: `/bmi-calculator` - Calculate Body Mass Index.
-- **Meta Tag Preview**: `/meta-tag-preview` - Preview how your website looks on social media.
-- **Base64 Studio**: `/base64` - Encode and decode Base64 data.
-- **Hash Generator**: `/hashgen` - Generate MD5, SHA-1, SHA-256 hashes.
-- **UUID Generator**: `/uuidgen` - Generate custom UUIDs.
-- **JWT Decoder**: `/jwtdecoder` - Decode and inspect JSON Web Tokens.
-- **PageSpeed Insights**: `/pagespeed` - Analyze website performance.
-- **Domain Lookup**: `/domainlookup` - Search domain records and information.
-- **Timestamp Converter**: `/timestamp` - Convert between Unix timestamps and readable dates.
-- **File Checksum Generator**: `/filechecksum` - Calculate SHA-256, MD5 checksums for files.
-- **JSON ↔ CSV Converter**: `/jsoncsv` - Convert data between JSON and CSV formats.
-- **Regex Tester**: `/regex-tester` - Test and debug regular expressions.
-- **Markdown Preview**: `/markdown-preview` - Preview markdown files and syntax.
-- **Favicon Generator**: `/favicon-generator` - Create favicons for your website.
-- **Color Palette Picker**: `/color-palette-picker` - Generate and pick color palettes.
-- **SEO Meta Tag Generator**: `/seo-metatag-generator` - Generate SEO-friendly meta tags.
-- **Unit Converter**: `/unit-converters` - Convert between different units.
+- **Dashboard**: `/` - Halaman utama.
+- **Image Optimizer**: `/image-optimizer` - Kompres & optimalkan gambar langsung di browser.
+- **Color Converter**: `/color-converter` - Konversi warna antara HEX, RGB, HSL, OKLCH, HWB, CMYK.
+- **Color Palette Picker**: `/color-palette-picker` - Ekstrak palette warna secara mudah dan cepat dari gambar.
+- **Tailwind CSS Color Converter**: `/tailwindcss-color-converter` - Konversi warna Tailwind CSS ke HEX, RGB, HSL, HSV, dan CMYK.
+- **Domain Scanner**: `/urlscanner` - Periksa domain atau URL terhadap 90+ vendor keamanan secara instan.
+- **Security Scanner**: `/security-scan` - Pemindaian kerentanan keamanan situs web Anda.
+- **Password Generator**: `/passgen` - Buat password kuat & acak secara instan.
+- **Password Checker**: `/passcheck` - Cek apakah password kamu pernah bocor.
+- **JWT Decoder**: `/jwtdecoder` - Decode, analisis dan verifikasi JSON Web Tokens.
+- **Meta Tag Preview**: `/meta-tag-preview` - Review meta tag dari URL apapun.
+- **PageSpeed Insights**: `/pagespeed` - Analisis performa website Anda, aksesibilitas, dan SEO dalam hitungan detik.
+- **Domain Lookup**: `/domainlookup` - Cek ketersediaan domain dan informasi registrar.
+- **Favicon Generator**: `/favicon-generator` - Buat favicon untuk website Anda dengan mudah dan cepat.
+- **SEO Meta Tag Generator**: `/seo-metatag-generator` - Buat meta tag yang optimal untuk SEO website Anda dengan mudah dan cepat.
+- **Image Placeholder**: `/image-placeholder` - Buatkan image placeholder untuk mockups dan prototipe aplikasi Anda dengan mudah dan cepat.
+- **Image Base64 Converter**: `/image-base64-converter` - Ubah gambar menjadi base64 untuk digunakan dalam web development dengan mudah dan cepat.
+- **BMI Calculator**: `/bmi-calculator` - Kalkulator BMI untuk menghitung indeks massa tubuh.
+- **Timestamp Converter**: `/timestamp` - Konversi tanggal dan waktu ke format timestamp.
+- **File Checksum Generator**: `/filechecksum` - Generate checksum dari file.
+- **JSON ↔ CSV Converter**: `/jsoncsv` - Konversi JSON ke CSV dan sebaliknya.
+- **QR Code Generator**: `/qrcode` - Generate QR code dari teks atau URL apapun.
+- **Base64 Studio**: `/base64` - Encode dan decode base64 dari teks atau URL apapun.
+- **Hash Generator**: `/hashgen` - Generate hash dari teks atau URL apapun.
+- **UUID Generator**: `/uuidgen` - Generate UUID dari teks atau URL apapun.
+- **Regex Tester**: `/regex-tester` - Uji ekspresi reguler Anda secara real-time.
+- **Markdown Preview**: `/markdown-preview` - Tampilkan hasil markdown secara real-time.
+- **Unit Converter**: `/unit-converters` - Konversi berbagai jenis satuan dalam satu platform.
 
 ## Guidelines for LLMs and AI Agents
 If you are an AI or LLM agent reading this file, please interpret this website as a versatile utility web app.

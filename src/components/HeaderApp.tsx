@@ -32,7 +32,7 @@ export default function HeaderApp({
   }, []);
 
   return (
-    <header className="border-b border-slate-200/80 bg-white/70 backdrop-blur-md sticky top-0 z-9 transition-all duration-300">
+    <header className="border-b border-slate-200/80 bg-white/70 backdrop-blur-md sticky top-0 z-40 transition-all duration-300">
       <div
         className={`mx-auto px-4 sm:px-6 transition-all duration-300 flex items-center justify-center ${
           isScrolled ? "py-2" : "py-4"
@@ -116,7 +116,7 @@ export function HeaderHorizontal({
   children: React.ReactNode;
 }) {
   return (
-    <header className="border-b border-border/50 bg-white/80 backdrop-blur-xl sticky top-0 z-50">
+    <header className="border-b border-border/50 bg-white/80 backdrop-blur-xl sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
